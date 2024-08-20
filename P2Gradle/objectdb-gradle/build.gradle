@@ -1,0 +1,28 @@
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+    maven {
+        url = "https://m2.objectdb.com"
+    }
+}
+
+dependencies {
+    // This dependency is used by the application.
+    implementation 'com.objectdb:objectdb:2.9.0'
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'odb.gradle.Main'
+}
+
+javafx {
+    version = "22.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
